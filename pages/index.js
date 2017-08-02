@@ -6,7 +6,7 @@ import Dashboard from '../components/Dashboard'
 import CTable from '../components/Tables'
 import ABC from '../components/ABCView'
 import { ExpansionList, ExpansionPanel } from 'react-md/lib/ExpansionPanels';
-import Welcome from '../components/welcome'
+import Customer from '../components/customer'
 
 @observer
 export default class Index extends React.Component {
@@ -25,7 +25,7 @@ export default class Index extends React.Component {
   render() {
     return (<Provider store={this.store}>
     <Dashboard>
-          <Welcome/>
+          <Customer/>
 
     </Dashboard>
     </Provider>)
