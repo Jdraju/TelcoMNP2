@@ -8,6 +8,7 @@
     "docker-start": "next build && next start"
   },
   "dependencies": {
+    "aphrodite": "^1.2.3",
     "babel-loader": "^6.4.1",
     "maki": "^2.1.0",
     "mobx": "^3.1.9",

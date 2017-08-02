@@ -13,6 +13,8 @@ import ABC from '../components/ABCView'
 import XYZ from '../components/XYZView'
 import SkyLight from 'react-skylight';
 
+
+
 //const avatarSrc = 'https://cloud.githubusercontent.com/assets/13041/19686250/971bf7f8-9ac0-11e6-975c-188defd82df1.png'
 const avatarSrc = '/static/ibmlogo-grey-54x20.png'
 
@@ -76,7 +78,7 @@ export default class Dashboard extends PureComponent {
           onClick={this.props.store.inventory}
           leftIcon={<FontIcon>account_circle</FontIcon>}
           tileClassName='md-list-tile--mini'
-          primaryText={'Inventory'}
+          primaryText={'Dashboard'}
         />,
       },
       {
@@ -86,7 +88,7 @@ export default class Dashboard extends PureComponent {
           component={NavigationLink}
           leftIcon={<FontIcon>perm_identity</FontIcon>}
           tileClassName='md-list-tile--mini'
-          primaryText={'ABC View'}
+          primaryText={'Customer View'}
           onClick={() => {
             this.refs.ViewPop.show()
             }
@@ -100,7 +102,21 @@ export default class Dashboard extends PureComponent {
           component={NavigationLink}
           leftIcon={<FontIcon>perm_identity</FontIcon>}
           tileClassName='md-list-tile--mini'
-          primaryText={'XYZ View'}
+          primaryText={'DO View'}
+          onClick={() => {
+            this.refs.ViewPop2.show()
+            
+            }}
+        />,
+      },
+      {
+        roles: ['Telecommunications','XYZ'],
+        component: <ListItem
+          key='8'
+          component={NavigationLink}
+          leftIcon={<FontIcon>perm_identity</FontIcon>}
+          tileClassName='md-list-tile--mini'
+          primaryText={'RO View'}
           onClick={() => {
             this.refs.ViewPop2.show()
             
@@ -116,13 +132,14 @@ export default class Dashboard extends PureComponent {
           onClick={this.props.store.resetInventory}
           leftIcon={<FontIcon>account_circle</FontIcon>}
           tileClassName='md-list-tile--mini'
-          primaryText={'Reset Inventory'}
+          primaryText={'Regulator View'}
         />,
       }
     ]
     
 
     return <div>
+    
       <SkyLight dialogStyles = {{backgroundColor:'#FFFFFF',width:'95%',height:'500px',left: '28%', top:'50%',zIndex:999, position:'fixed',opacity: '0.93'}} hideOnOverlayClicked ref="ViewPop" title={this.abctitle}>
         {<ABC/>}
       </SkyLight>
@@ -133,9 +150,11 @@ export default class Dashboard extends PureComponent {
         <link rel='stylesheet' href='/static/react-md.min.css' />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />
-        <script src='https://api.mapbox.com/mapbox-gl-js/v0.33.1/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v0.33.1/mapbox-gl.css' rel='stylesheet' />
+        
+        
+
       </Head>
+     
       <NavigationDrawer
         navItems={navItems.filter(navItem => {
           let result = false
@@ -155,7 +174,7 @@ export default class Dashboard extends PureComponent {
           <SelectField
             id='account-switcher'
             defaultValue={this.state.role}
-            menuItems={['Telecommunications','XYZ','ABC']}
+            menuItems={['Telecommunications']}
             key='account-switcher'
             position={SelectField.Positions.BELOW}
             className='md-select-field--toolbar'
@@ -168,10 +187,11 @@ export default class Dashboard extends PureComponent {
         mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY_MINI}
         tabletDrawerType={NavigationDrawer.DrawerTypes.PERSISTENT_MINI}
         desktopDrawerType={NavigationDrawer.DrawerTypes.PERSISTENT_MINI}
-        toolbarTitle='Blockchain for Telco Dashboard'
+        toolbarTitle='Blockchain for Telco MNP Dashboard'
       >
         {this.props.children}
       </NavigationDrawer>
+      
     </div>
   }
 }
