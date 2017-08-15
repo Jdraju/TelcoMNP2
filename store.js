@@ -2,7 +2,7 @@ import { observable } from 'mobx'
 import request from 'superagent'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import map from './lib/map'
+
 
 
 let store = null

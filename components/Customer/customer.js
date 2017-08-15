@@ -4,6 +4,7 @@ import { ExpansionList, ExpansionPanel } from 'react-md/lib/ExpansionPanels';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import Plans from './plans';
 import Details from './details';
+import ReactTable from 'react-table'
 
 var products = [{
       id: 1,

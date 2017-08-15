@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom'
 import { Provider,observer } from 'mobx-react'
 import { initStore } from '../store'
 import Dashboard from '../components/Dashboard'
-import CTable from '../components/Tables'
-import ABC from '../components/ABCView'
 import { ExpansionList, ExpansionPanel } from 'react-md/lib/ExpansionPanels';
-import Customer from '../components/customer'
+import Customer from '../components/Customer/customer'
+import Donor from '../components/DO/donor'
+import { css } from 'aphrodite'
+import { styles } from './styles.css'
+import {Router, route, IndexRoute, hashHistory} from 'react-router'
 
 @observer
 export default class Index extends React.Component {
@@ -25,9 +27,8 @@ export default class Index extends React.Component {
   render() {
     return (<Provider store={this.store}>
     <Dashboard>
-          <Customer/>
-
+        <Donor/> 
+        <h1>FAIL</h1>
     </Dashboard>
     </Provider>)
-    
 }}

@@ -9,9 +9,6 @@ import FontIcon from 'react-md/lib/FontIcons'
 import ListItem from 'react-md/lib/Lists/ListItem'
 import NavigationDrawer from 'react-md/lib/NavigationDrawers'
 import SelectField from 'react-md/lib/SelectFields'
-import ABC from '../components/ABCView'
-import XYZ from '../components/XYZView'
-import SkyLight from 'react-skylight';
 
 
 
@@ -33,21 +30,13 @@ class NavigationLink extends PureComponent {
 
 @inject('store') @observer
 export default class Dashboard extends PureComponent {
- 
-   skyLightContent
-   xyztitle
-   abctitle
-   skylightTitle
 
   constructor() {
     super()
     this.state = {
       role: 'Telecommunications'
     }
-      this.skyLightContent = <ABC/>
-      this.xyztitle = "XYZ View"
-      this.abctitle = "ABC View"
-      this.skylightTitle = this.abctitle
+
   }
   
   render() {
@@ -139,19 +128,9 @@ export default class Dashboard extends PureComponent {
     
 
     return <div>
-    
-      <SkyLight dialogStyles = {{backgroundColor:'#FFFFFF',width:'95%',height:'500px',left: '28%', top:'50%',zIndex:999, position:'fixed',opacity: '0.93'}} hideOnOverlayClicked ref="ViewPop" title={this.abctitle}>
-        {<ABC/>}
-      </SkyLight>
-      <SkyLight dialogStyles = {{backgroundColor:'#FFFFFF',width:'95%',height:'500px',left: '28%', top:'50%',zIndex:999, position:'fixed',opacity: '0.93'}} hideOnOverlayClicked ref="ViewPop2" title={this.xyztitle}>
-        {<XYZ/>}
-        </SkyLight>
       <Head>
         <link rel='stylesheet' href='/static/react-md.min.css' />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />
-        
-        
 
       </Head>
      

@@ -21,4 +21,4 @@ RUN mkdir -p /opt/app && cd /opt/app && ln -s /tmp/node_modules
 ADD . /opt/app
 
 CMD [ "yarn", "run", "docker-start" ]
-EXPOSE 3000
+EXPOSE 3001

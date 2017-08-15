@@ -44,6 +44,8 @@ class plans extends Component{
     render() {
         return(
             <div>
+                <link rel="stylesheet" href="./react-bootstrap-table.min.css"/>
+                <script src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.js" />
                 <BootstrapTable data={ products } striped hover condensed>
                     <TableHeaderColumn dataField='planID' isKey>Plan ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='serviceValidity'>Term</TableHeaderColumn>
